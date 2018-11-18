@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require_relative 'lib/golden_files.rb'
+require 'rspec-golden-files'
 
 Gem::Specification.new do |spec|
   spec.name          = "rspec-golden-files"
-  spec.version       = RSpec::Matchers::GoldenFiles::VERSION
+  spec.version       = RSpec::GoldenFiles::VERSION
   spec.authors       = ["Anton Antonov"]
   spec.email         = ["anton.synd.antonov@gmail.com"]
 
