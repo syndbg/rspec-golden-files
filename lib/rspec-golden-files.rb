@@ -6,7 +6,7 @@ require 'ostruct'
 
 module RSpec
   module GoldenFiles
-    VERSION = '0.1.1'.freeze
+    VERSION = '0.1.3'.freeze
 
     class SimpleFileReader
       def initialize(filename)
@@ -114,9 +114,9 @@ module RSpec
         "expected #{@value.inspect} matches golden file '#{@filename}'"
       end
     end
-  end
 
-  def match_golden_file(filename, file_reader_type: 'simple', template_vars: {})
-    RSpec::Matchers::GoldenFiles::GoldenFilesMatcher.new(filename, file_reader_type, template_vars)
+    def match_golden_file(filename, file_reader_type: 'simple', template_vars: {})
+      RSpec::GoldenFiles::GoldenFilesMatcher.new(filename, file_reader_type, template_vars)
+    end
   end
 end
